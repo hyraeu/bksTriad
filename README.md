@@ -1,16 +1,48 @@
-# React + Vite
+markdown
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Authentication Page - React Solution
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A complete authentication interface built with React, featuring Login and Signup views with comprehensive form validation and a polished UI.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the Oxlint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Dual Mode Interface**: Toggle between Login and Signup views
+
+- **Form Validation**: Real-time validation with user-friendly error messages
+
+- **Password Management**: Show/hide toggle, strength indicator (stretch goal)
+
+- **Mock Authentication**: Simulated login/signup with user persistence
+
+- **Responsive Design**: Works on all screen sizes
+
+- **Accessibility**: ARIA labels, focus management, and semantic HTML
+
+
+## 📦 Installation
+
+
+1. Clone the repository:
+
+```bash
+
+git clone <repository-url>
+
+cd auth-page-solution
+
+2. Install dependencies:
+
+bash
+
+npm install
+
+3. Start the development server:
+
+bash
+
+npm run dev
+
+4. Open your browser and navigate to http://localhost:5173
