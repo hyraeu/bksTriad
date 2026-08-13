@@ -1,4 +1,7 @@
-markdown
+### 🛠️ Tech Stack
+![React](https://shields.io)
+![NodeJS](https://shields.io)
+![Python](https://shields.io)
 
 # Authentication Page - React Solution
 
