@@ -19,7 +19,8 @@ export default function AuthPage() {
     const next = {};
     if (isSignup && !form.name.trim()) next.name = "Tell us what to call you.";
     if (!form.email.trim()) next.email = "Enter your email.";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) next.email = "That email doesn't look right.";
+    else if (!/^\S+@\S+\.\S+$/.test(form.email))
+      next.email = "That email doesn't look right.";
     if (!form.password) next.password = "Enter a password.";
     else if (isSignup && form.password.length < 8)
       next.password = "Use at least 8 characters.";
@@ -48,7 +49,9 @@ export default function AuthPage() {
         <div className="relative z-10">
           <div className="flex items-center gap-2 mb-16">
             <Feather size={20} strokeWidth={1.5} className="text-[#C9A45C]" />
-            <span className="tracking-[0.2em] text-xs uppercase text-[#C9A45C]">Marginal</span>
+            <span className="tracking-[0.2em] text-xs uppercase text-[#C9A45C]">
+              Marginal
+            </span>
           </div>
 
           <h1
@@ -68,14 +71,16 @@ export default function AuthPage() {
         </div>
 
         <ul className="relative z-10 space-y-3 text-sm text-[#C7C9CC]">
-          {["No feeds. No likes. Just entries.", "Private by default, always.", "Export everything, anytime."].map(
-            (line) => (
-              <li key={line} className="flex items-center gap-3">
-                <Check size={14} className="text-[#C9A45C] shrink-0" />
-                {line}
-              </li>
-            )
-          )}
+          {[
+            "No feeds. No likes. Just entries.",
+            "Private by default, always.",
+            "Export everything, anytime.",
+          ].map((line) => (
+            <li key={line} className="flex items-center gap-3">
+              <Check size={14} className="text-[#C9A45C] shrink-0" />
+              {line}
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -84,7 +89,9 @@ export default function AuthPage() {
         <div className="w-full max-w-sm">
           <div className="lg:hidden flex items-center gap-2 mb-10 justify-center">
             <Feather size={18} strokeWidth={1.5} className="text-[#3F4B8C]" />
-            <span className="tracking-[0.2em] text-xs uppercase text-[#3F4B8C]">Marginal</span>
+            <span className="tracking-[0.2em] text-xs uppercase text-[#3F4B8C]">
+              Marginal
+            </span>
           </div>
 
           {/* Mode toggle */}
@@ -98,7 +105,9 @@ export default function AuthPage() {
                 type="button"
                 onClick={() => switchMode(t.key)}
                 className={`relative pb-3 mr-8 text-[15px] transition-colors ${
-                  mode === t.key ? "text-[#1B1F23]" : "text-[#9A9488] hover:text-[#1B1F23]"
+                  mode === t.key
+                    ? "text-[#1B1F23]"
+                    : "text-[#9A9488] hover:text-[#1B1F23]"
                 }`}
               >
                 {t.label}
@@ -169,7 +178,9 @@ export default function AuthPage() {
                 </button>
               </div>
               {errors.password && (
-                <p className="mt-1.5 text-xs text-[#B0473F]">{errors.password}</p>
+                <p className="mt-1.5 text-xs text-[#B0473F]">
+                  {errors.password}
+                </p>
               )}
               {!isSignup && (
                 <button
@@ -185,7 +196,11 @@ export default function AuthPage() {
               type="submit"
               className="w-full mt-2 bg-[#1B1F23] text-[#F6F2EA] text-[15px] py-3 flex items-center justify-center gap-2 hover:bg-[#3F4B8C] transition-colors focus:outline-none focus:ring-2 focus:ring-[#3F4B8C] focus:ring-offset-2 focus:ring-offset-[#F6F2EA]"
             >
-              {submitted ? "Check your inbox" : isSignup ? "Create account" : "Sign in"}
+              {submitted
+                ? "Check your inbox"
+                : isSignup
+                  ? "Create account"
+                  : "Sign in"}
               {!submitted && <ArrowRight size={16} />}
             </button>
           </form>

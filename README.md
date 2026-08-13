@@ -19,6 +19,7 @@ A complete authentication interface built with React, featuring Login and Signup
 git clone <repository-url>
 cd auth-page-solution
 ```
+
 2. Install dependencies:
 
 ```bash
@@ -34,11 +35,11 @@ npm run dev
 
 ## 🛠️ Tech Stack
 
-- **React 18**:  UI Framework
-- **Vite**:  Build Tool and development server
-- **TailWind CSS**:  Utility-first CSS Framework
-- **Lucide React**:  Icon Library
-- **React Hooks**:  State Management
+- **React 18**: UI Framework
+- **Vite**: Build Tool and development server
+- **TailWind CSS**: Utility-first CSS Framework
+- **Lucide React**: Icon Library
+- **React Hooks**: State Management
 
 ## 📁 Project Structure
 
@@ -56,20 +57,24 @@ src/
 ├── main.jsx                # Entry point
 └── index.css               # Global styles
 ```
+
 ## 🔐 Usage
 
-Login 
+Login
+
 - **Enter your email and password**
 - **Use the mock credentials: test@example.com / Password123!**
 - **Or sign up for a new account**
 
 Signup
+
 - **Fill in name, email, password, and confirm password**
 - **Password must be at least 8 characters**
 - **Password strength indicator provides real-time feedback**
 - **Passwords must match**
 
 Validation Rules
+
 - **All fields are required**
 - **Email must be in valid format (e.g., user@domain.com)**
 - **Password minimum 8 characters (signup only)**
@@ -93,41 +98,44 @@ Password Strength Indicator
 Successful Submission
 
 ## 🧪 Testing
+
 To test the mock authentication
 
 Existing Users
+
 - **Email: test@example.com**
 - **Password: Password123!**
 - **Email: jamie@marginal.com**
 - **Password: SecurePass456!**
 
-Signup 
+Signup
+
 - **Create a new account with any email not already in the system**
 - **Password must meet the minimum requirements**
 
 ## 📝 Activity Requirements Checklist
 
 - **☑**
-LoginForm and SignupForm in single component with toggle
+  LoginForm and SignupForm in single component with toggle
 - **☑**
-Controlled inputs using useState
+  Controlled inputs using useState
 - **☑**
-onSubmit handler with e.preventDefault()
+  onSubmit handler with e.preventDefault()
 - **☑**
-Form data logging/display
+  Form data logging/display
 - **☑**
-Required field validation
+  Required field validation
 - **☑**
-Email format validation
+  Email format validation
 - **☑**
-Password length validation (min 8 characters)
+  Password length validation (min 8 characters)
 - **☑**
-Confirm password validation
+  Confirm password validation
 - **☑**
-Field-specific error messages
+  Field-specific error messages
 - **☑**
-Show/hide password toggle
+  Show/hide password toggle
 - **☑**
-Loading state on submit button 
+  Loading state on submit button
 - **☑**
-Responsive Layout
+  Responsive Layout
