@@ -56,3 +56,78 @@ src/
 ├── main.jsx                # Entry point
 └── index.css               # Global styles
 ```
+## 🔐 Usage
+
+Login 
+- **Enter your email and password**
+- **Use the mock credentials: test@example.com / Password123!**
+- **Or sign up for a new account**
+
+Signup
+- **Fill in name, email, password, and confirm password**
+- **Password must be at least 8 characters**
+- **Password strength indicator provides real-time feedback**
+- **Passwords must match**
+
+Validation Rules
+- **All fields are required**
+- **Email must be in valid format (e.g., user@domain.com)**
+- **Password minimum 8 characters (signup only)**
+- **Password and confirm password must match (signup only)**
+
+## 🎯 Stretch Goals Implemented
+
+1. ✅ Persist login state using React Context - User session is saved in localStorage
+2. ✅ Password strength indicator - Visual feedback with weak/medium/strong labels
+3. ✅ Mock authentication - Hardcoded user database with credential checking
+4. ✅ Accessibility pass - ARIA attributes, focus states, error announcements
+
+## 📸 Screenshots
+
+Login view
+
+Signup View with Validation Errors
+
+Password Strength Indicator
+
+Successful Submission
+
+## 🧪 Testing
+To test the mock authentication
+
+Existing Users
+- **Email: test@example.com**
+- **Password: Password123!**
+- **Email: jamie@marginal.com**
+- **Password: SecurePass456!**
+
+Signup 
+- **Create a new account with any email not already in the system**
+- **Password must meet the minimum requirements**
+
+## 📝 Activity Requirements Checklist
+
+- **☑**
+LoginForm and SignupForm in single component with toggle
+- **☑**
+Controlled inputs using useState
+- **☑**
+onSubmit handler with e.preventDefault()
+- **☑**
+Form data logging/display
+- **☑**
+Required field validation
+- **☑**
+Email format validation
+- **☑**
+Password length validation (min 8 characters)
+- **☑**
+Confirm password validation
+- **☑**
+Field-specific error messages
+- **☑**
+Show/hide password toggle
+- **☑**
+Loading state on submit button 
+- **☑**
+Responsive Layout
