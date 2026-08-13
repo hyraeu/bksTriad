@@ -40,4 +40,19 @@ npm run dev
 - **Lucide React**:  Icon Library
 - **React Hooks**:  State Management
 
+## 📁 Project Structure
 
+```text
+src/
+├── components/
+│ ├── AuthPage.jsx          # Main authentication component
+│ ├── Field.jsx             # Reusable form field component
+│ └── PasswordStrength.jsx  # Password strength indicator
+├── contexts/
+│ └── AuthContext.jsx       # Authentication context provider
+├── hooks/
+│ └── useAuth.js            # Custom auth hook
+├── App.jsx                 # Root component
+├── main.jsx                # Entry point
+└── index.css               # Global styles
+```
