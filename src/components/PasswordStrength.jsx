@@ -21,14 +21,13 @@ export default function PasswordStrength({ password }) {
     return score;
   };
 
-  const score = getStrength(password);
-
   const getStrengthLabel = (s) => {
-    if (s <= 1) return { label: "Weak", color: "text-[#B0473F]" };
-    if (s <= 3) return { label: "Medium", color: "text-[#C9A45C]" };
-    return { label: "Strong", color: "text-[#3F4B8C]" };
+    if (s <= 1) return { label: "Weak", color: "red" };
+    if (s <= 3) return { label: "Medium", color: "yellow" };
+    return { label: "Strong", color: "#90EE90" };
   };
 
+  const score = getStrength(password);
   const strength = getStrengthLabel(score);
 
   const getWidth = (s) => {
@@ -56,15 +55,10 @@ export default function PasswordStrength({ password }) {
       <div className="h-1 w-full bg-[#DDD6C8] rounded-full overflow-hidden">
         <div
           className={`h-full ${getBarColor(score)} ${getWidth(score)} transition-all duration-300 rounded-full`}
-
           role="progressbar"
-
           aria-valuenow={score}
-
           aria-valuemin={0}
-
           aria-valuemax={5}
-
           aria-label={`Password strength: ${strength.label}`}
         />
       </div>
@@ -73,22 +67,15 @@ export default function PasswordStrength({ password }) {
         <li className={password.length >= 8 ? "text-[#3F4B8C]" : ""}>
           {password.length >= 8 ? "✓" : "○"} 8+ characters
         </li>
-
-        <li
-          className={
+        <li className={
             /[a-z]/.test(password) && /[A-Z]/.test(password)
-              ? "text-[#3F4B8C]"
-              : ""
-          }
-        >
+              ? "text-[#3F4B8C]" : ""}>
           {/[a-z]/.test(password) && /[A-Z]/.test(password) ? "✓" : "○"}{" "}
           Uppercase & lowercase
         </li>
-
         <li className={/\d/.test(password) ? "text-[#3F4B8C]" : ""}>
           {/\d/.test(password) ? "✓" : "○"} Number
         </li>
-
         <li className={/[^a-zA-Z0-9]/.test(password) ? "text-[#3F4B8C]" : ""}>
           {/[^a-zA-Z0-9]/.test(password) ? "✓" : "○"} Special character
         </li>
