@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Eye, EyeOff, Feather, ArrowRight, Check } from "lucide-react";
+import { Eye, EyeOff, ArrowRight } from "lucide-react";
 
 import Field from "./Field";
 
@@ -138,113 +138,18 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen w-full flex bg-[#F6F2EA]">
-      {/* Left editorial panel */}
-
-      <div className="hidden lg:flex lg:w-5/12 relative overflow-hidden bg-[#1B1F23] text-[#F6F2EA] flex-col justify-between px-14 py-12">
-        <FeatherMark />
-
-        <div className="relative z-10">
-          <div className="flex items-center gap-2 mb-16">
-            <Feather size={20} strokeWidth={1.5} className="text-[#C9A45C]" />
-
-            <span className="tracking-[0.2em] text-xs uppercase text-[#C9A45C]">
-              Marginal
-            </span>
-          </div>
-
-          <h1
-            className="text-[2.75rem] leading-[1.08] mb-6"
-
-            style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
-          >
-            Write in the
-            <br />
-            margins of
-            <br />
-            your day.
-          </h1>
-
-          <p className="text-[#C7C9CC] text-[15px] leading-relaxed max-w-xs">
-            A quiet place for short entries — the thought before the meeting,
-            the line after the walk. Nothing to schedule, nothing to perform.
-          </p>
-        </div>
-
-        <ul className="relative z-10 space-y-3 text-sm text-[#C7C9CC]">
-          {[
-            "No feeds. No likes. Just entries.",
-
-            "Private by default, always.",
-
-            "Export everything, anytime.",
-          ].map((line) => (
-            <li key={line} className="flex items-center gap-3">
-              <Check size={14} className="text-[#C9A45C] shrink-0" />
-
-              {line}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Right form panel */}
+    <div className="min-h-screen w-full flex items-center justify-center bg-[#F6F2EA]">
+      {/* Form panel */}
 
       <div className="flex-1 flex items-center justify-center px-6 py-16">
         <div className="w-full max-w-sm">
-          <div className="lg:hidden flex items-center gap-2 mb-10 justify-center">
-            <Feather size={18} strokeWidth={1.5} className="text-[#3F4B8C]" />
-
-            <span className="tracking-[0.2em] text-xs uppercase text-[#3F4B8C]">
-              Marginal
-            </span>
-          </div>
-
-          {/* Mode toggle */}
-
-          <div className="flex mb-10 border-b border-[#DDD6C8]">
-            {[
-              { key: "login", label: "Sign in" },
-
-              { key: "signup", label: "Create account" },
-            ].map((t) => (
-              <button
-                key={t.key}
-
-                type="button"
-
-                onClick={() => switchMode(t.key)}
-
-                className={`relative pb-3 mr-8 text-[15px] transition-colors ${
-                  mode === t.key
-                    ? "text-[#1B1F23]"
-                    : "text-[#9A9488] hover:text-[#1B1F23]"
-                }`}
-
-                aria-current={mode === t.key ? "page" : undefined}
-              >
-                {t.label}
-
-                {mode === t.key && (
-                  <span className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[#3F4B8C]" />
-                )}
-              </button>
-            ))}
-          </div>
-
           <h2
-            className="text-2xl mb-1 text-[#1B1F23]"
+            className="text-2xl mb-6 text-[#1B1F23] text-center"
 
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
-            {isSignup ? "Start your first entry" : "Welcome back"}
+            {isSignup ? "Register" : "Login"}
           </h2>
-
-          <p className="text-sm text-[#7A7468] mb-8">
-            {isSignup
-              ? "Takes under a minute. No credit card."
-              : "Good to see you again."}
-          </p>
 
           {authError && (
             <div
@@ -483,7 +388,7 @@ export default function AuthPage() {
           </form>
 
           <p className="mt-8 text-center text-sm text-[#7A7468]">
-            {isSignup ? "Already keeping notes with us?" : "New to Marginal?"}{" "}
+            {isSignup ? "Already have an account?" : "Need an account?"}{" "}
             <button
               type="button"
 
@@ -491,47 +396,11 @@ export default function AuthPage() {
 
               className="text-[#3F4B8C] hover:underline focus:outline-none focus:ring-2 focus:ring-[#3F4B8C] rounded"
             >
-              {isSignup ? "Sign in" : "Create an account"}
+              {isSignup ? "Login" : "Register"}
             </button>
           </p>
         </div>
       </div>
     </div>
-  );
-}
-
-// Signature element: a single continuous line, like a pen never lifted —
-
-// echoes the "marginal notes" concept as faint background linework.
-
-function FeatherMark() {
-  return (
-    <svg
-      className="absolute -right-24 -top-16 opacity-[0.07] pointer-events-none"
-
-      width="520"
-
-      height="520"
-
-      viewBox="0 0 520 520"
-
-      fill="none"
-    >
-      <path
-        d="M40 460 C 160 400, 120 260, 220 220 C 320 180, 300 60, 460 40"
-
-        stroke="#F6F2EA"
-
-        strokeWidth="1.5"
-      />
-
-      <path
-        d="M80 480 C 200 420, 160 280, 260 240 C 360 200, 340 80, 500 60"
-
-        stroke="#F6F2EA"
-
-        strokeWidth="1.5"
-      />
-    </svg>
   );
 }
